@@ -229,6 +229,16 @@ body.light .ftr{color:#ccc;border-color:rgba(0,0,0,.06)}
 </style>
 </head>
 <body>
+<script>
+/* Light/dark follows the operating system setting. No in-page toggle by design. */
+(function(){
+  var mq = window.matchMedia("(prefers-color-scheme: light)");
+  function apply(){ document.body.classList.toggle("light", mq.matches); }
+  apply();
+  if (mq.addEventListener) mq.addEventListener("change", apply);
+  else if (mq.addListener) mq.addListener(apply);
+})();
+</script>
 <div class="watermark" aria-hidden="true"></div>
 <div class="ctr">
   <header class="site-header">
@@ -241,10 +251,6 @@ body.light .ftr{color:#ccc;border-color:rgba(0,0,0,.06)}
     </div>
     <div class="hdr-tools">
       <button class="hdr-pill" id="fsTgl" type="button">⛶ Fullscreen</button>
-      <button class="icon-btn theme-toggle" id="themeTgl" type="button" aria-label="Toggle dark mode">
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-      </button>
     </div>
   </header>
 
@@ -458,14 +464,6 @@ buildSoundRow($("stSndRow"));
 var tSec=300,tRem=300,running=false,tInt=null,vizStyle="digital";
 var swRunning=false,swStart=0,swElapsed=0,swInt=null,swLaps=[];
 
-// ============ THEME TOGGLE ============
-var stored=null;try{stored=localStorage.getItem("rt_theme")}catch(e){}
-var isLight = stored ? (stored==="light") : true;            // light is the default
-document.body.classList.toggle("light",isLight);
-$("themeTgl").addEventListener("click",function(){
-  isLight=!isLight;document.body.classList.toggle("light",isLight);
-  try{localStorage.setItem("rt_theme",isLight?"light":"dark")}catch(e){}
-});
 
 // ============ FULLSCREEN ============
 var isFs=false;

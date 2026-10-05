@@ -46,6 +46,6 @@ A classroom timer toolkit for Regis Jesuit High School teachers — countdown, s
 3. Choose a visual style and sound
 4. Hit Start
 
-## Built by
+
 
 Jason Beyer, Director of Educational Technology — Regis Jesuit High School

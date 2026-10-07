@@ -258,6 +258,29 @@ body.fs .rj-masthead::before{display:none}
 @media(max-width:600px){.rj-masthead .brand,.rj-masthead h1{font-size:17px!important}.rj-masthead>label{flex-basis:100%}}
 @media print{.rj-masthead::before{display:none}.rj-masthead,.rj-masthead .brand,.rj-masthead h1{color:#000!important;-webkit-text-fill-color:#000!important}}
 /*/RJMASTHEAD*/
+
+/*RJCONTRAST*/
+/* Readability: text colours lifted to WCAG AA contrast (4.5:1) in each theme */
+:where(body.light) .tab{color:#696969}
+:where(body.light) .pill{color:#696969}
+:where(body.light) .custom-row label{color:#6d6d6d}
+:where(body.light) .snd-btn{color:#696969}
+body.light .site-footer{color:#6d6d6d}
+body.light .tab{color:#696969}
+body.light .pill{color:#696969}
+body.light .preset{color:#6d6d6d}
+body.light .snd-btn{color:#696969}
+body.light .custom-row label{color:#6d6d6d}
+:where(body:not(.light)) .tab.a{color:#ee5c74}
+:where(body:not(.light)) .pill.a{color:#ee5a72}
+:where(body:not(.light)) .preset.a{color:#ee5c74}
+:where(body:not(.light)) .snd-btn.a{color:#ee5a72}
+:where(body:not(.light)) .site-footer{color:#888888}
+body:not(.light) .rj-tools h2{color:#ed516a}
+body:not(.light) .rj-here{color:#ee5870}
+body:not(.light) #noSv{color:#8c8c8c!important}
+body.light #noSv{color:#6b6b6b!important}
+/*/RJCONTRAST*/
 </style>
 </head>
 <body>
